@@ -4,20 +4,16 @@ import ReactDOM from 'react-dom'
 const Header = ({course}) => <h1>{course}</h1>
 
 const Content = ({part1,exc1,part2,exc2,part3,exc3}) => (
-  <>
-    <p>
-      {part1} {exc1}
-    </p>
-    <p>
-      {part2} {exc2}
-    </p>
-    <p>
-      {part3} {exc3}
-    </p>
-  </>
+  <div>
+    <Part part={part1} exercise={exc1}/>
+    <Part part={part2} exercise={exc2}/>
+    <Part part={part3} exercise={exc3}/>
+  </div>
 )
 
 const Total = ({exercises1, exercises2, exercises3}) => <p>Number of exercises {exercises1 + exercises2 + exercises3}</p>
+
+const Part = ({part, exercise}) => <p>{part} {exercise}</p>
 
 const App = () => {
   const course = 'Half Stack application development'
